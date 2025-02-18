@@ -1,0 +1,28 @@
+﻿@model LibraryManagmentSystemIdentity.Models.CollegesModel
+
+<h1>Edit College</h1>
+
+<form asp-action="Edit" method="post">
+    <div class="form-group">
+        <label asp-for="CollegeName" class="control-label">College Name</label>
+        <input asp-for="CollegeName" class="form-control" placeholder="Enter College Name" required />
+        <span asp-validation-for="CollegeName" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="CollegeAddress" class="control-label">College Address</label>
+        <textarea asp-for="CollegeAddress" class="form-control" placeholder="Enter College Address" rows="4" required></textarea>
+        <span asp-validation-for="CollegeAddress" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="CollegeEmail" class="control-label">College Email</label>
+        <input asp-for="CollegeEmail" class="form-control" placeholder="Enter College Email" type="email" required />
+        <span asp-validation-for="CollegeEmail" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary">Save Changes</button>
+        <a asp-action="Index" class="btn btn-secondary">Cancel</a>
+    </div>
+</form>

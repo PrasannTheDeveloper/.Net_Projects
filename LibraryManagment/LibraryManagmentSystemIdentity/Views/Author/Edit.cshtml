@@ -1,0 +1,51 @@
+﻿@model LibraryManagmentSystemIdentity.Models.AuthorsModel;
+
+<h1 class="text-center">Edit Author</h1>
+
+<!-- Back to List Button -->
+<a asp-action="Index" class="btn btn-secondary mb-3">← Back to List</a>
+
+<!-- Form Card -->
+<div class="card shadow p-4">
+    <div class="card-body">
+        <form asp-action="Edit" asp-controller="Author" method="post">
+            <div class="form-group">
+                <label asp-for="AuthorName" class="control-label font-weight-bold">Author Name</label>
+                <input asp-for="AuthorName" class="form-control" placeholder="Enter author's name" />
+                <span asp-validation-for="AuthorName" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="BirthDate" class="control-label font-weight-bold">Birth Date</label>
+                <input asp-for="BirthDate" type="date" class="form-control" />
+                <span asp-validation-for="BirthDate" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="DeadDate" class="control-label font-weight-bold">Death Date</label>
+                <input asp-for="DeadDate" type="date" class="form-control" />
+                <span asp-validation-for="DeadDate" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Bio" class="control-label font-weight-bold">Biography</label>
+                <textarea asp-for="Bio" class="form-control" rows="4" placeholder="Write a short biography..." oninput="updateBioCount()"></textarea>
+                <small id="bioCount" class="text-muted">0/500 characters</small>
+                <span asp-validation-for="Bio" class="text-danger"></span>
+            </div>
+
+            <div class="d-flex justify-content-between mt-3">
+                <button type="submit" class="btn btn-success">💾 Save Changes</button>
+                <a asp-action="Index" class="btn btn-danger">❌ Cancel</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- Script for Character Count -->
+<script>
+    function updateBioCount() {
+        let bioInput = document.querySelector('textarea[name="Bio"]');
+        document.getElementById('bioCount').innerText = `${bioInput.value.length}/500 characters`;
+    }
+</script>

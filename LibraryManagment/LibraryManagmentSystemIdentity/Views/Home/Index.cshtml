@@ -1,0 +1,31 @@
+﻿@{
+    ViewBag.Title = "Welcome to Bro-Library";
+}
+
+<div class="container text-center mt-5">
+    <h1 class="display-4">Welcome to <span class="text-primary">Bro-Library</span></h1>
+    <p class="lead text-muted">Manage books, authors, and students effortlessly.</p>
+
+    <!-- Hero Image -->
+    <div class="my-4">
+        <img src="~/images/logo.jpg" class="img-fluid rounded shadow-lg" alt="Library Banner">
+    </div>
+
+    <!-- Navigation Buttons -->
+    <div class="mt-4">
+        <a href="@Url.Action("Index", "Student")"  class="btn btn-lg btn-success mx-2">Students</a>
+        <a action="Index" asp-controller="Book" class="btn btn-lg btn-primary mx-2">Books</a>
+        <a asp-action="Index" asp-controller="Author" class="btn btn-lg btn-warning mx-2">Authors</a>
+        <a asp-action="Index" asp-controller="College" class="btn btn-lg btn-success mx-2">College</a>
+    </div>
+
+    <!-- Additional Features -->
+    <div class="mt-5 p-4 bg-light rounded shadow">
+        <h3 class="text-secondary">Why Bro-Library?</h3>
+        <ul class="list-unstyled">
+            <li>📚 Easily manage books, students, and authors</li>
+            <li>🔍 Search and track borrowed books</li>
+            <li>📖 A modern and user-friendly interface</li>
+        </ul>
+    </div>
+</div>

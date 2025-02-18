@@ -1,0 +1,29 @@
+﻿@model IEnumerable<LibraryManagmentSystemIdentity.Models.CollegesModel>
+
+<h1>Colleges</h1>
+<a asp-action="Create" class="MyButton">Add New College</a>
+
+<table class="table">
+    <thead style="background-color:antiquewhite;">
+        <tr>
+            <th>College Name</th>
+            <th>Address</th>
+            <th>Email</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.CollegeName</td>
+                <td>@item.CollegeAddress</td>
+                <td>@item.CollegeEmail</td>
+                <td>
+                    <a asp-action="Edit" class="MyButton" asp-route-id="@item.CollegeId">Edit</a> |
+                    <a asp-action="Delete" asp-route-id="@item.CollegeId" class="MyButton">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
